@@ -83,7 +83,7 @@ class Svm (object):
             #########################################################################
             # TODO: 10 points                                                       #
             # - Sample batchSize from training data and save to xBatch and yBatch   #
-            # - After sampling xBatch should have shape (D, batchSize)              #
+            # - After sampling xBatch should have shape (batchSize, D)              #
             #                  yBatch (batchSize, )                                 #
             # - Use that sample for gradient decent optimization.                   #
             # - Update the weights using the gradient and the learning rate.        #

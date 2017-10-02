@@ -119,6 +119,7 @@ if classifier.W is not None:
 
 # Tuneup hyper parameters (regularization strength, learning rate) by using validation data set,
 # and random search technique to find the best set of parameters.
+# should be able to get the accuracy about 40% on validation set.
 bestParameters = [0, 0]
 bestAcc = -1
 bestModel = None
@@ -208,7 +209,7 @@ if classifier.W is not None:
     plt.clf()
 
 # Tuneup hyper parameters (regularization strength, learning rate) by using validation data set,
-# and random search technique to find the best set of parameters.
+# and experiment with different learning rate and reg by setting array of these value to find the best parameter.
 bestParameters = [0, 0]
 bestAcc = -1
 bestModel = None
