@@ -44,9 +44,9 @@ class Svm (object):
         #############################################################################
         for i in range(x.shape[0]):
             score = x[i].dot(self.W)
-            ds = np.zeros(score.shape[1])
+            ds = np.zeros(score.shape[0])
             target = score[y[i]]
-            for j in range(score.shape[1]):
+            for j in range(score.shape[0]):
                 if j == y[i]:
                     continue
                 delta = score[j] - target + 1
@@ -54,12 +54,17 @@ class Svm (object):
                     loss += delta
                     ds[j] = 1
             ds[y[i]] = -1 * np.sum(ds)
-            dW += 1/self.W.shape[1] * x[i].T.dot(ds) + 2 * reg * self.W
+            dW += 1/self.W.shape[1] * x[i].T.reshape(x.shape[1], 1).dot(ds.reshape(1, score.shape[0])) + (
+                      2 * reg * self.W)
+        # take mean of the gradient as it calculated for every image & it shouldn't be the case
+        # not sure if taking mean is the perfect way to go
+        dW /= x.shape[0]
+        # not sure if mean has to be taken for the loss as well, check with TA
+        # loss /= x.shape[0]
         loss += reg * np.sum(self.W * self.W)
         #############################################################################
         #                          END OF YOUR CODE                                 #
         #############################################################################
-
         return loss, dW
 
     def train (self, x, y, lr=1e-3, reg=1e-5, iter=100, batchSize=200, verbose=False):
@@ -98,12 +103,14 @@ class Svm (object):
             # Hint:                                                                 #
             # - Use np.random.choice                                                #
             #########################################################################
+            sample_indices = np.random.choice(np.arange(x.shape[0]), batchSize)
+            xBatch = x[sample_indices]
+            yBatch = y[sample_indices]
 
+            loss, grad = self.calLoss(xBatch, yBatch, reg)
+            lossHistory.append(loss)
 
-
-
-
-            pass
+            self.W += -lr * grad
             #########################################################################
             #                       END OF YOUR CODE                                #
             #########################################################################
@@ -129,10 +136,7 @@ class Svm (object):
         # TODO: 5 points                                                          #
         # -  Store the predict output in yPred                                    #
         ###########################################################################
-
-
-
-        pass
+        yPred = np.argmax(x.dot(self.W), axis=1)
         ###########################################################################
         #                           END OF YOUR CODE                              #
         ###########################################################################
@@ -145,10 +149,7 @@ class Svm (object):
         # TODO: 5 points                                                          #
         # -  Calculate accuracy of the predict value and store to acc variable    #
         ###########################################################################
-
-
-
-        pass
+        acc = np.mean(self.predict(x) == y) * 100
         ###########################################################################
         #                           END OF YOUR CODE                              #
         ###########################################################################
