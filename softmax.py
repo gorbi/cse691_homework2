@@ -11,9 +11,7 @@ class Softmax (object):
         # - Generate a random softmax weight matrix to use to compute loss.     #
         #   with standard normal distribution and Standard deviation = 0.01.    #
         #########################################################################
-
-
-        pass
+        self.W = np.random.normal(loc=0.0, scale=0.01, size=(inputDim, outputDim))
         #########################################################################
         #                       END OF YOUR CODE                                #
         #########################################################################
@@ -44,13 +42,27 @@ class Softmax (object):
         # Bonus:                                                                    #
         # - +2 points if done without loop                                          #
         #############################################################################
-
-
-
-
-
-
-        pass
+        for i in range(x.shape[0]):
+            score = x[i].dot(self.W)
+            score = score - np.amax(score)
+            e_score = np.exp(score)
+            sum_e_score = np.sum(e_score)
+            target = e_score[y[i]]
+            loss += -1 * np.log(target/sum_e_score)
+            ds = e_score
+            for j in range(score.shape[0]):
+                if j == y[i]:
+                    continue
+                ds[j] = ds[j] / sum_e_score
+            ds[y[i]] = target/sum_e_score - 1
+            dW += 1/self.W.shape[1] * x[i].T.reshape(x.shape[1], 1).dot(ds.reshape(1, score.shape[0])) + (
+                      2 * reg * self.W)
+        # take mean of the gradient as it calculated for every image & it shouldn't be the case
+        # not sure if taking mean is the perfect way to go
+        dW /= x.shape[0]
+        # not sure if mean has to be taken for the loss as well, check with TA
+        loss /= x.shape[0]
+        loss += reg * np.sum(self.W * self.W)
         #############################################################################
         #                          END OF YOUR CODE                                 #
         #############################################################################
@@ -93,12 +105,14 @@ class Softmax (object):
             # Hint:                                                                 #
             # - Use np.random.choice                                                #
             #########################################################################
+            sample_indices = np.random.choice(np.arange(x.shape[0]), batchSize)
+            xBatch = x[sample_indices]
+            yBatch = y[sample_indices]
 
+            loss, grad = self.calLoss(xBatch, yBatch, reg)
+            lossHistory.append(loss)
 
-
-
-
-            pass
+            self.W += -lr * grad
             #########################################################################
             #                       END OF YOUR CODE                                #
             #########################################################################
@@ -124,10 +138,7 @@ class Softmax (object):
         # TODO: 5 points                                                          #
         # -  Store the predict output in yPred                                    #
         ###########################################################################
-
-
-
-        pass
+        yPred = np.argmax(x.dot(self.W), axis=1)
         ###########################################################################
         #                           END OF YOUR CODE                              #
         ###########################################################################
@@ -140,10 +151,7 @@ class Softmax (object):
         # TODO: 5 points                                                          #
         # -  Calculate accuracy of the predict value and store to acc variable    #
         ###########################################################################
-
-
-
-        pass
+        acc = np.mean(self.predict(x) == y) * 100
         ###########################################################################
         #                           END OF YOUR CODE                              #
         ###########################################################################

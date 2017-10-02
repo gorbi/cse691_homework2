@@ -60,7 +60,7 @@ class Svm (object):
         # not sure if taking mean is the perfect way to go
         dW /= x.shape[0]
         # not sure if mean has to be taken for the loss as well, check with TA
-        # loss /= x.shape[0]
+        loss /= x.shape[0]
         loss += reg * np.sum(self.W * self.W)
         #############################################################################
         #                          END OF YOUR CODE                                 #
