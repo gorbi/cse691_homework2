@@ -11,8 +11,7 @@ class Svm (object):
         # - Generate a random svm weight matrix to compute loss                 #
         #   with standard normal distribution and Standard deviation = 0.01.    #
         #########################################################################
-
-        pass
+        self.W = np.random.normal(loc=0.0, scale=0.01, size=(inputDim, outputDim))
         #########################################################################
         #                       END OF YOUR CODE                                #
         #########################################################################
@@ -43,12 +42,20 @@ class Svm (object):
         # Bonus:                                                                    #
         # - +2 points if done without loop                                          #
         #############################################################################
-
-
-
-
-
-        pass
+        for i in range(x.shape[0]):
+            score = x[i].dot(self.W)
+            ds = np.zeros(score.shape[1])
+            target = score[y[i]]
+            for j in range(score.shape[1]):
+                if j == y[i]:
+                    continue
+                delta = score[j] - target + 1
+                if delta > 0:
+                    loss += delta
+                    ds[j] = 1
+            ds[y[i]] = -1 * np.sum(ds)
+            dW += 1/self.W.shape[1] * x[i].T.dot(ds) + 2 * reg * self.W
+        loss += reg * np.sum(self.W * self.W)
         #############################################################################
         #                          END OF YOUR CODE                                 #
         #############################################################################
