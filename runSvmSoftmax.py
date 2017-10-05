@@ -132,18 +132,23 @@ print ('\nFinding best model for Svm classifier')
 # - Store the best model in bestSoftmax                                        #
 # - Store the best accuracy in bestAcc                                         #
 ################################################################################
+learningRates = np.logspace(-5, -7, num=5)
+regularizationStrengths = 5 * np.logspace(0.1, 2, num=5)
+# For this above range, got output as
+# Best Model parameter, lr = 3.162277660168379e-06, reg = 500.0
 
+for learningRate in learningRates:
+    for regularizationStrength in regularizationStrengths:
+        print('Trying out learning rate as {0} & regularization strength as {1}'.format(
+            learningRate, regularizationStrength))
+        currentSvm = Svm(xTrain.shape[1], numClasses)
+        currentSvm.train(xTrain, yTrain, lr=learningRate, reg=regularizationStrength, iter=1500)
+        currentAcc = currentSvm.calAccuracy(xVal, yVal)
 
-
-
-
-
-
-
-
-
-
-pass
+        if currentAcc > bestAcc:
+            bestAcc = currentAcc
+            bestParameters = [learningRate, regularizationStrength]
+            bestModel = currentSvm
 ################################################################################
 #                              END OF YOUR CODE                                #
 ################################################################################
@@ -221,16 +226,19 @@ print ('\nFinding best model for Softmax classifier')
 # - Store the best model in bestSoftmax                                        #
 # - Store the best accuracy in bestAcc                                         #
 ################################################################################
+learningRates = np.logspace(-4, -10, num=7)
+regularizationStrengths = 5 * np.logspace(1, 7, num=7)
 
+for learningRate in learningRates:
+    for regularizationStrength in regularizationStrengths:
+        currentSoftmax = Softmax(xTrain.shape[1], numClasses)
+        currentSoftmax.train(xTrain, yTrain, lr=learningRate, reg=regularizationStrength, iter=1500)
+        currentAcc = currentSoftmax.calAccuracy(xVal, yVal)
 
-
-
-
-
-
-
-
-pass
+        if currentAcc > bestAcc:
+            bestAcc = currentAcc
+            bestParameters = [learningRate, regularizationStrength]
+            bestModel = currentSoftmax
 ################################################################################
 #                              END OF YOUR CODE                                #
 ################################################################################
