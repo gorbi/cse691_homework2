@@ -132,8 +132,8 @@ print ('\nFinding best model for Svm classifier')
 # - Store the best model in bestSoftmax                                        #
 # - Store the best accuracy in bestAcc                                         #
 ################################################################################
-learningRates = np.logspace(-5, -7, num=5)
-regularizationStrengths = 5 * np.logspace(0.1, 2, num=5)
+learningRates = np.logspace(-4.5, -6.5, num=5)
+regularizationStrengths = 5 * np.logspace(1, 3, num=5)
 # For this above range, got output as
 # Best Model parameter, lr = 3.162277660168379e-06, reg = 500.0
 
