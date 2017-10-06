@@ -104,13 +104,11 @@ class Svm (object):
             # - Use np.random.choice                                                #
             #########################################################################
             sample_indices = np.random.choice(np.arange(x.shape[0]), batchSize)
-            xBatch = x[sample_indices]
-            yBatch = y[sample_indices]
 
-            loss, grad = self.calLoss(xBatch, yBatch, reg)
+            loss, dW = self.calLoss(x[sample_indices], y[sample_indices], reg)
+            self.W += -lr * dW
+
             lossHistory.append(loss)
-
-            self.W += -lr * grad
             #########################################################################
             #                       END OF YOUR CODE                                #
             #########################################################################

@@ -1,0 +1,68 @@
+Using TensorFlow backend.
+Train image shape:    (49000, 32, 32, 3)
+Train label shape:    (49000,)
+Validate image shape: (1000, 32, 32, 3)
+Validate label shape: (1000,)
+Test image shape:     (10000, 32, 32, 3)
+Test label shape:     (10000,)
+Train image shape after add bias column:   (49000, 3073)
+Val image shape after add bias column:     (1000, 3073)
+Test image shape after add bias column:    (10000, 3073)
+
+##############################################################################################
+Start training Svm classifier
+Loop 0 loss 153642.5693530183
+Loop 100 loss 20615.914568348602
+Loop 200 loss 2776.2724483275288
+Loop 300 loss 378.1817432042557
+Loop 400 loss 55.925421114195885
+Loop 500 loss 13.016500657546306
+Loop 600 loss 7.220643063440245
+Loop 700 loss 6.385840958939595
+Loop 800 loss 6.601489818665538
+Loop 900 loss 6.144126732569853
+Loop 1000 loss 6.1267241276024675
+Loop 1100 loss 6.536885518830335
+Loop 1200 loss 6.486193328004445
+Loop 1300 loss 6.198495990525283
+Loop 1400 loss 6.2468890525536205
+Training time: 84.12288403511047
+Training acc:   30.951020408163266%
+Validating acc: 32.6%
+Testing acc:    31.35%
+
+Finding best model for Svm classifier
+Best validation accuracy: 37.4
+Best Model parameter, lr = 3.162277660168379e-06, reg = 500.0
+Training acc:   37.1265306122449%
+Validating acc: 37.4%
+Testing acc:    35.57%
+
+##############################################################################################
+Start training Softmax classifier
+Loop 0 loss 154473.01298387142
+Loop 100 loss 20708.058623091434
+Loop 200 loss 2779.343408288928
+Loop 300 loss 374.4818829439829
+Loop 400 loss 52.06410668287915
+Loop 500 loss 8.90373281623518
+Loop 600 loss 3.14304466301019
+Loop 700 loss 2.360861101428018
+Loop 800 loss 2.2528599272383056
+Loop 900 loss 2.2402913964675735
+Loop 1000 loss 2.257515160130288
+Loop 1100 loss 2.2501948391062694
+Loop 1200 loss 2.238356519665798
+Loop 1300 loss 2.241374494990402
+Loop 1400 loss 2.250201067597267
+Training time: 86.26662611961365
+Training acc:   26.024489795918367%
+Validating acc: 26.8%
+Testing acc:    26.779999999999998%
+
+Finding best model for Softmax classifier
+Best validation accuracy: 39.900000000000006
+Best Model parameter, lr = 3.1622776601683795e-05, reg = 50.0
+Training acc:   39.19591836734694%
+Validating acc: 39.900000000000006%
+Testing acc:    38.190000000000005%

@@ -1,0 +1,186 @@
+Using TensorFlow backend.
+Train image shape:    (49000, 32, 32, 3)
+Train label shape:    (49000,)
+Validate image shape: (1000, 32, 32, 3)
+Validate label shape: (1000,)
+Test image shape:     (10000, 32, 32, 3)
+Test label shape:     (10000,)
+Train image shape after add bias column:   (49000, 3073)
+Val image shape after add bias column:     (1000, 3073)
+Test image shape after add bias column:    (10000, 3073)
+
+##############################################################################################
+Start training Svm classifier
+Loop 0 loss 153397.82441851884
+Loop 100 loss 20593.148603990074
+Loop 200 loss 2771.780489381755
+Loop 300 loss 377.78281733129273
+Loop 400 loss 56.09925799017406
+Loop 500 loss 12.927262434267169
+Loop 600 loss 7.252307336570416
+Loop 700 loss 6.700733284411461
+Loop 800 loss 6.081990471136978
+Loop 900 loss 5.898623213458951
+Loop 1000 loss 6.369342700156641
+Loop 1100 loss 6.078354339242305
+Loop 1200 loss 6.662510003112414
+Loop 1300 loss 6.728959543561862
+Loop 1400 loss 6.439670975894281
+Training time: 83.56815314292908
+Training acc:   30.918367346938773%
+Validating acc: 32.4%
+Testing acc:    31.45%
+
+Finding best model for Svm classifier
+Trying out learning rate as 3.1622776601683795e-05 & regularization strength as 50.0
+Current best accuracy is 26.0
+Current best learning rate is 3.1622776601683795e-05 & regularization strength is 50.0
+Trying out learning rate as 3.1622776601683795e-05 & regularization strength as 107.72173450159416
+Current best accuracy is 26.400000000000002
+Current best learning rate is 3.1622776601683795e-05 & regularization strength is 107.72173450159416
+Trying out learning rate as 3.1622776601683795e-05 & regularization strength as 232.07944168063887
+Trying out learning rate as 3.1622776601683795e-05 & regularization strength as 500.0
+Current best accuracy is 26.900000000000002
+Current best learning rate is 3.1622776601683795e-05 & regularization strength is 500.0
+Trying out learning rate as 3.1622776601683795e-05 & regularization strength as 1077.2173450159412
+Trying out learning rate as 3.1622776601683795e-05 & regularization strength as 2320.7944168063887
+Trying out learning rate as 3.1622776601683795e-05 & regularization strength as 5000.0
+Trying out learning rate as 1.4677992676220705e-05 & regularization strength as 50.0
+Current best accuracy is 32.5
+Current best learning rate is 1.4677992676220705e-05 & regularization strength is 50.0
+Trying out learning rate as 1.4677992676220705e-05 & regularization strength as 107.72173450159416
+Current best accuracy is 37.2
+Current best learning rate is 1.4677992676220705e-05 & regularization strength is 107.72173450159416
+Trying out learning rate as 1.4677992676220705e-05 & regularization strength as 232.07944168063887
+Trying out learning rate as 1.4677992676220705e-05 & regularization strength as 500.0
+Trying out learning rate as 1.4677992676220705e-05 & regularization strength as 1077.2173450159412
+Trying out learning rate as 1.4677992676220705e-05 & regularization strength as 2320.7944168063887
+Trying out learning rate as 1.4677992676220705e-05 & regularization strength as 5000.0
+Trying out learning rate as 6.8129206905796085e-06 & regularization strength as 50.0
+Trying out learning rate as 6.8129206905796085e-06 & regularization strength as 107.72173450159416
+Trying out learning rate as 6.8129206905796085e-06 & regularization strength as 232.07944168063887
+Current best accuracy is 37.9
+Current best learning rate is 6.8129206905796085e-06 & regularization strength is 232.07944168063887
+Trying out learning rate as 6.8129206905796085e-06 & regularization strength as 500.0
+Current best accuracy is 38.2
+Current best learning rate is 6.8129206905796085e-06 & regularization strength is 500.0
+Trying out learning rate as 6.8129206905796085e-06 & regularization strength as 1077.2173450159412
+Trying out learning rate as 6.8129206905796085e-06 & regularization strength as 2320.7944168063887
+Trying out learning rate as 6.8129206905796085e-06 & regularization strength as 5000.0
+Trying out learning rate as 3.162277660168379e-06 & regularization strength as 50.0
+Trying out learning rate as 3.162277660168379e-06 & regularization strength as 107.72173450159416
+Trying out learning rate as 3.162277660168379e-06 & regularization strength as 232.07944168063887
+Trying out learning rate as 3.162277660168379e-06 & regularization strength as 500.0
+Current best accuracy is 39.6
+Current best learning rate is 3.162277660168379e-06 & regularization strength is 500.0
+Trying out learning rate as 3.162277660168379e-06 & regularization strength as 1077.2173450159412
+Trying out learning rate as 3.162277660168379e-06 & regularization strength as 2320.7944168063887
+Trying out learning rate as 3.162277660168379e-06 & regularization strength as 5000.0
+Trying out learning rate as 1.4677992676220705e-06 & regularization strength as 50.0
+Trying out learning rate as 1.4677992676220705e-06 & regularization strength as 107.72173450159416
+Trying out learning rate as 1.4677992676220705e-06 & regularization strength as 232.07944168063887
+Trying out learning rate as 1.4677992676220705e-06 & regularization strength as 500.0
+Trying out learning rate as 1.4677992676220705e-06 & regularization strength as 1077.2173450159412
+Trying out learning rate as 1.4677992676220705e-06 & regularization strength as 2320.7944168063887
+Trying out learning rate as 1.4677992676220705e-06 & regularization strength as 5000.0
+Trying out learning rate as 6.812920690579622e-07 & regularization strength as 50.0
+Trying out learning rate as 6.812920690579622e-07 & regularization strength as 107.72173450159416
+Trying out learning rate as 6.812920690579622e-07 & regularization strength as 232.07944168063887
+Trying out learning rate as 6.812920690579622e-07 & regularization strength as 500.0
+Trying out learning rate as 6.812920690579622e-07 & regularization strength as 1077.2173450159412
+Trying out learning rate as 6.812920690579622e-07 & regularization strength as 2320.7944168063887
+Trying out learning rate as 6.812920690579622e-07 & regularization strength as 5000.0
+Trying out learning rate as 3.162277660168379e-07 & regularization strength as 50.0
+Trying out learning rate as 3.162277660168379e-07 & regularization strength as 107.72173450159416
+Trying out learning rate as 3.162277660168379e-07 & regularization strength as 232.07944168063887
+Trying out learning rate as 3.162277660168379e-07 & regularization strength as 500.0
+Trying out learning rate as 3.162277660168379e-07 & regularization strength as 1077.2173450159412
+Trying out learning rate as 3.162277660168379e-07 & regularization strength as 2320.7944168063887
+Trying out learning rate as 3.162277660168379e-07 & regularization strength as 5000.0
+Best validation accuracy: 39.6
+Best Model parameter, lr = 3.162277660168379e-06, reg = 500.0
+Training acc:   37.210204081632654%
+Validating acc: 39.6%
+Testing acc:    35.89%
+
+##############################################################################################
+Start training Softmax classifier
+Loop 0 loss 153967.45763479508
+Loop 100 loss 20641.573349038532
+Loop 200 loss 2771.063329229343
+Loop 300 loss 373.63405076866513
+Loop 400 loss 51.9658849802096
+Loop 500 loss 8.905052425668995
+Loop 600 loss 3.128641797528853
+Loop 700 loss 2.362325042957172
+Loop 800 loss 2.2630188089490457
+Loop 900 loss 2.2490975447596773
+Loop 1000 loss 2.237245905664764
+Loop 1100 loss 2.247238933074845
+Loop 1200 loss 2.24447786491764
+Loop 1300 loss 2.2348804965744318
+Loop 1400 loss 2.251254866450365
+Training time: 84.07465505599976
+Training acc:   25.324489795918364%
+Validating acc: 26.3%
+Testing acc:    25.83%
+
+Finding best model for Softmax classifier
+Trying out learning rate as 3.1622776601683795e-05 & regularization strength as 50.0
+Current best accuracy is 37.8
+Current best learning rate is 3.1622776601683795e-05 & regularization strength is 50.0
+Trying out learning rate as 3.1622776601683795e-05 & regularization strength as 107.72173450159416
+Current best accuracy is 40.8
+Current best learning rate is 3.1622776601683795e-05 & regularization strength is 107.72173450159416
+Trying out learning rate as 3.1622776601683795e-05 & regularization strength as 232.07944168063887
+Trying out learning rate as 3.1622776601683795e-05 & regularization strength as 500.0
+Trying out learning rate as 3.1622776601683795e-05 & regularization strength as 1077.2173450159412
+Trying out learning rate as 3.1622776601683795e-05 & regularization strength as 2320.7944168063887
+Trying out learning rate as 3.1622776601683795e-05 & regularization strength as 5000.0
+Trying out learning rate as 1.4677992676220705e-05 & regularization strength as 50.0
+Trying out learning rate as 1.4677992676220705e-05 & regularization strength as 107.72173450159416
+Trying out learning rate as 1.4677992676220705e-05 & regularization strength as 232.07944168063887
+Trying out learning rate as 1.4677992676220705e-05 & regularization strength as 500.0
+Trying out learning rate as 1.4677992676220705e-05 & regularization strength as 1077.2173450159412
+Trying out learning rate as 1.4677992676220705e-05 & regularization strength as 2320.7944168063887
+Trying out learning rate as 1.4677992676220705e-05 & regularization strength as 5000.0
+Trying out learning rate as 6.8129206905796085e-06 & regularization strength as 50.0
+Trying out learning rate as 6.8129206905796085e-06 & regularization strength as 107.72173450159416
+Trying out learning rate as 6.8129206905796085e-06 & regularization strength as 232.07944168063887
+Trying out learning rate as 6.8129206905796085e-06 & regularization strength as 500.0
+Trying out learning rate as 6.8129206905796085e-06 & regularization strength as 1077.2173450159412
+Trying out learning rate as 6.8129206905796085e-06 & regularization strength as 2320.7944168063887
+Trying out learning rate as 6.8129206905796085e-06 & regularization strength as 5000.0
+Trying out learning rate as 3.162277660168379e-06 & regularization strength as 50.0
+Trying out learning rate as 3.162277660168379e-06 & regularization strength as 107.72173450159416
+Trying out learning rate as 3.162277660168379e-06 & regularization strength as 232.07944168063887
+Trying out learning rate as 3.162277660168379e-06 & regularization strength as 500.0
+Trying out learning rate as 3.162277660168379e-06 & regularization strength as 1077.2173450159412
+Trying out learning rate as 3.162277660168379e-06 & regularization strength as 2320.7944168063887
+Trying out learning rate as 3.162277660168379e-06 & regularization strength as 5000.0
+Trying out learning rate as 1.4677992676220705e-06 & regularization strength as 50.0
+Trying out learning rate as 1.4677992676220705e-06 & regularization strength as 107.72173450159416
+Trying out learning rate as 1.4677992676220705e-06 & regularization strength as 232.07944168063887
+Trying out learning rate as 1.4677992676220705e-06 & regularization strength as 500.0
+Trying out learning rate as 1.4677992676220705e-06 & regularization strength as 1077.2173450159412
+Trying out learning rate as 1.4677992676220705e-06 & regularization strength as 2320.7944168063887
+Trying out learning rate as 1.4677992676220705e-06 & regularization strength as 5000.0
+Trying out learning rate as 6.812920690579622e-07 & regularization strength as 50.0
+Trying out learning rate as 6.812920690579622e-07 & regularization strength as 107.72173450159416
+Trying out learning rate as 6.812920690579622e-07 & regularization strength as 232.07944168063887
+Trying out learning rate as 6.812920690579622e-07 & regularization strength as 500.0
+Trying out learning rate as 6.812920690579622e-07 & regularization strength as 1077.2173450159412
+Trying out learning rate as 6.812920690579622e-07 & regularization strength as 2320.7944168063887
+Trying out learning rate as 6.812920690579622e-07 & regularization strength as 5000.0
+Trying out learning rate as 3.162277660168379e-07 & regularization strength as 50.0
+Trying out learning rate as 3.162277660168379e-07 & regularization strength as 107.72173450159416
+Trying out learning rate as 3.162277660168379e-07 & regularization strength as 232.07944168063887
+Trying out learning rate as 3.162277660168379e-07 & regularization strength as 500.0
+Trying out learning rate as 3.162277660168379e-07 & regularization strength as 1077.2173450159412
+Trying out learning rate as 3.162277660168379e-07 & regularization strength as 2320.7944168063887
+Trying out learning rate as 3.162277660168379e-07 & regularization strength as 5000.0
+Best validation accuracy: 40.8
+Best Model parameter, lr = 3.1622776601683795e-05, reg = 107.72173450159416
+Training acc:   38.68163265306123%
+Validating acc: 40.8%
+Testing acc:    38.48%
